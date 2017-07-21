@@ -1,17 +1,13 @@
 /**
  * 翻页按钮生成
  *
- * Created by cql on 2017/4/29.
+ * Created by 陈桥黎 on 2017/4/29.
  */
-
-
-// import 'paginator.pcss';
-
 
 export default class Paginator {
 
     constructor({
-                    ePage,
+                    el,
                     onChange = function () {
 
                     },
@@ -26,8 +22,7 @@ export default class Paginator {
             this.paginatorInit = function () {
             };
 
-
-            ePage.addEventListener('click', (e) => {
+            el.addEventListener('click', (e) => {
                 let t = e.target;
                 if (t.tagName === 'A') {
 
@@ -46,7 +41,7 @@ export default class Paginator {
         this.total = total;
 
         /// 公开
-        this.ePage = ePage;
+        this.el = el;
         this.aroundNum = aroundNum;
         this.sideNum = sideNum;
 
@@ -166,7 +161,7 @@ export default class Paginator {
             html += '<span>&gt;</span>';
         }
 
-        this.ePage.innerHTML = html;
+        this.el.innerHTML = html;
 
     }
 
