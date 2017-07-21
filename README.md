@@ -4,6 +4,8 @@
 ## 快速使用
 
 ```html
+<link rel="stylesheet" href="../dist/paginator.min.css">
+<script src="../dist/paginator.min.js"></script>
 <div class="paginator"></div>
 <script>
     var paginator = new Paginator({
