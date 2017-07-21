@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "陈桥黎",
   "license": "ISC",
-  "main": "./dist/paginator.js",
+  "main": "dist/paginator.cjs.js",
   "scripts": {
     "build": "rollup -c"
   },
