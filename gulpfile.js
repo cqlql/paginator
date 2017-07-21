@@ -50,7 +50,7 @@ gulp.task('p', function () {
 
 });
 
-gulp.task('build', ['def','min','css']);
+gulp.task('build', ['def','min','cjs','css']);
 
 gulp.task('def', async function () {
     const bundle = await rollup.rollup({
@@ -97,6 +97,30 @@ gulp.task('min', async function () {
         format: 'umd',
         moduleName: 'Paginator',
         dest: 'dist/paginator.min.js', // equivalent to --output
+        // sourceMap: true
+    });
+});
+
+gulp.task('cjs', async function () {
+    const bundle = await rollup.rollup({
+        entry: './src/paginator.js',
+        plugins: [
+            resolve({
+                customResolveOptions: {
+                    moduleDirectory: 'node_modules'
+                }
+            }),
+            babel({
+                exclude: ['node_modules/**'],
+            }),
+            commonjs()
+        ]
+    });
+
+    await bundle.write({
+        format: 'cjs',
+        moduleName: 'Paginator',
+        dest: 'dist/paginator.cjs.js', // equivalent to --output
         // sourceMap: true
     });
 });
