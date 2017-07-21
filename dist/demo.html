@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="paginator.css">
+    <script src="paginator.js"></script>
+</head>
+<body>
+<div class="paginator"></div>
+<script>
+    var aroundNum = 1;// 头尾
+    var sideNum = 2;// 当前页旁边
+    var total = 68;// 总页数
+
+    var ePage = document.querySelector('.paginator');
+
+    var paginator = new Paginator({
+        ePage,
+        aroundNum,
+        sideNum,
+        total,
+        onChange(page){
+            console.log(page);
+        }
+    });
+
+
+</script>
+</body>
+</html>

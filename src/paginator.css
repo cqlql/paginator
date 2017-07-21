@@ -1,0 +1,25 @@
+
+
+.paginator {
+    span {
+        padding:3px 6px;
+
+        margin: 3px;
+        color: #b4b4b4;
+    }
+
+    a {
+
+        padding:3px 6px;
+        margin: 3px;
+        color: #1b9af7;
+        &.active {
+
+            background-color: #1B9AF7;
+            color: #fff;
+        }
+    }
+}
+
+
+
