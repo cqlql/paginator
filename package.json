@@ -1,11 +1,16 @@
 {
   "name": "paginator",
   "version": "1.0.0",
+  "description": "js翻页组件",
   "author": "陈桥黎",
   "license": "ISC",
-  "main": "dist/paginator.cjs.js",
+  "main": "./dist/paginator.cjs.js",
   "scripts": {
     "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqlql/paginator.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
