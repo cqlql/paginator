@@ -45,11 +45,6 @@ gulp.task('w', function () {
     });
 });
 
-gulp.task('p', function () {
-
-
-});
-
 gulp.task('build', ['def','min','cjs','css']);
 
 gulp.task('def', async function () {
@@ -125,6 +120,4 @@ gulp.task('cjs', async function () {
     });
 });
 
-gulp.task('default', function () {
-
-});
+gulp.task('default', ['build']);
