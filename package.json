@@ -6,7 +6,7 @@
   "license": "ISC",
   "main": "./dist/paginator.cjs.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
