@@ -59,7 +59,7 @@ gulp.task('def', async function () {
             babel({
                 exclude: ['node_modules/**'],
             }),
-            uglify(),   // 加入压缩代码
+            // uglify(),   // 加入压缩代码
             commonjs()
         ]
     });
