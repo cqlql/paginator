@@ -1,11 +1,7 @@
 var gulp = require('gulp');
-
 var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var scss = require('postcss-scss');
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
-
 const rollup = require('rollup');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
@@ -36,16 +32,6 @@ gulp.task('css', function () {
         .pipe(rename({suffix:'.min'}))
         .pipe(gulp.dest('dist'))
 });
-
-gulp.task('w', function () {
-    gulp.start('css');
-
-    gulp.watch('src/css/*', function () {
-        gulp.start('css');
-    });
-});
-
-gulp.task('build', ['def','min','cjs','css']);
 
 gulp.task('def', async function () {
     const bundle = await rollup.rollup({
@@ -120,4 +106,4 @@ gulp.task('cjs', async function () {
     });
 });
 
-gulp.task('default', ['build']);
+gulp.task('build', ['def','min','cjs','css']);
